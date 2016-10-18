@@ -5,7 +5,7 @@
   "main": "server/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server/index.js",
+    "start": "webpack; node server/index.js",
     "local": "./node_modules/.bin/nodemon --watch server -e js server/index.js"
   },
   "author": "Lighthouse Labs",
@@ -17,6 +17,12 @@
     "md5": "^2.1.0"
   },
   "devDependencies": {
-    "nodemon": "^1.9.2"
+    "babel-cli": "^6.16.0",
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5",
+    "babel-polyfill": "^6.16.0",
+    "babel-preset-es2015": "^6.16.0",
+    "nodemon": "^1.9.2",
+    "webpack": "^1.13.2"
   }
 }

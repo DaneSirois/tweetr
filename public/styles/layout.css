@@ -8,18 +8,233 @@ html {
 }
 *, *:before, *:after {
   box-sizing: inherit;
+
 }
 
 /*
  * Global layout stuff
  */
 
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+li {
+  list-style: none;
+}
+
+
+/* ================== Layout ================== */
+
 body {
   margin: 0;
   color: #244751;
   background-color: #eee;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+.container { /* <main> */
+  position: relative;
+  max-width: 590px;
+  width: 100%;
+
+  margin: 80px auto 0px;
+  padding: 70px;
+  text-align: center;
+  background-color: white;
+}
+
+/* ================== Nav-Bar ================== */
+
+#nav-bar {
+  position: fixed;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+
+  height: 80px;
+
+  background-color: #00a087;
+  color: #e8fdff;
+  padding: 0px 2em;
+}
+
+    #nav-bar .logo { /* <img> */
+      float: left;
+      width: 80px; 
+      height: 80px;
+    }
+
+    #nav-bar .header { /* <span> */
+      float: left;
+      font-size: 2em;
+      line-height: 80px;
+
+      margin-left: 10px;
+    }
+
+/* ================== Nav-Bar ================== */
+
+.new-tweet { /* <section> */
+  position: relative;
+  background-color: grey;
+
+  padding: 1.5em;
+
+  border: 1px solid black;
+  border-radius: 2px;
+}
+  
+    .new-tweet h2 {
+      float: left;
+      margin: 0px;
+    }
+        .new-tweet h2:after {
+          clear: both;
+        }
+
+    .new-tweet textarea { /* <textarea> */
+      margin: 0px auto;
+      margin-top: 10px;
+      padding: 8px;
+
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .new-tweet__footer { /* <div> */ 
+      overflow: hidden;
+      width: 100%;
+    }
+    
+        .new-tweet input { /* <input> */ 
+          float: left;
+
+          height: 28px;
+
+        }
+
+        .new-tweet .counter { /* <span> */
+          float: right;
+          font-size: 1.5em;
+        }
+
+        .new-tweet input:after, .new-tweet .counter:after {
+           content: "."; 
+           visibility: hidden; 
+           display: block; 
+           height: 0; 
+           clear: both;
+        }
+
+        .counter--red {
+          color: red;
+        }
+
+
+
+
+
+
+.tweetList__container { /* <div> */
+  margin-top: 20px;
+}
+
+.tweetList li { /* <li> */ 
+  margin: 0px 0px 10px;
+}
+
+.tweet { /* <article> */ 
+  width: 100%;
+
+  border-radius: 2px;
+  border: 1px solid black;
+}
+
+.tweet header, .tweet section, .tweet footer { /* <header> */
+  display: block;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+
+  padding: 10px;
+}
+
+.tweet header { /* <header> */ 
+  background-color: lightgrey;
+
+  max-height: 72px;
+
+  border-bottom: 1px solid black;
+}
+
+.tweet header .tweet__profile-pic { /* <img> */ 
+  float: left;
+  height: 50px;
+  margin-right: 12px;
+}
+    .tweet header .tweet__profile-pic:after { /* <img> */ 
+      clear: both;
+    }
+
+.tweet header .tweet__username { /* <p> */ 
+  float: left;
+  margin: 0px;
+
+  font-size: 1.2em;
+  font-weight: bold;
+}
+    .tweet header .tweet__username:after { /* <img> */ 
+      clear: both;
+    }
+
+.tweet header .tweet__tweeter-handle { /* <p> */ 
+  float: right;
+  margin: 0px;
+}
+    .tweet header .tweet__tweeter-handle:after { /* <img> */ 
+      clear: both;
+    }
+
+.tweet section { /* <section> */ 
+  text-align: left;
+
+  min-height: 100px;
+}
+
+.tweet section .tweet__text-body { /* <p> */ 
+  margin: 0px;
+}
+
+.tweet footer { /* <footer> */ 
+  border-top: 1px solid black;
+}
+
+.tweet footer .tweet__date { /* <p> */ 
+  float: left;
+
+  margin: 0px;
+}
+    .tweet footer .tweet__date:after { /* <p> */ 
+      clear: both;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

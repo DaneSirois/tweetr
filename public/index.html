@@ -1,32 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
 
-    <!-- External CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-
-    <!-- App CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,700,700i" rel="stylesheet">
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 
-    <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/app.js"></script>
+    <script src="/scripts/bundle.js"></script>
   </head>
 
   <body>
 
-    <!-- Top nav bar (fixed) -->
     <nav id="nav-bar">
-      <img class="logo" src="/images/bird.png" width="80px" height="80px">
+      <img class="logo" src="/images/bird.png">
       <span class="header">Tweeter</span>
     </nav>
 
-    <!-- Page-specific (main) content here -->
     <main class="container">
+      <section class="new-tweet">
+        <h2>Compose Tweet:</h2>
+        <form action="/tweets" method="POST">
+          <textarea name="text" type="text" placeholder="What are you humming about?"></textarea>
+          <div class="new-tweet__footer">
+            <input type="submit" value="Tweet">
+            <span class="counter">140</span>
+          </div>
+        </form>
+      </section>
+
+      <div class="tweetList__container">
+        <ul class="tweetList">
+          <li>
+            <article class="tweet">
+              <header>
+                <img class="tweet__profile-pic" src="./images/avatar.png"></img>
+                <p class="tweet__username">User Name</p>
+                <p class="tweet__tweeter-handle">@username</p>
+              </header>
+              <section>
+                <p class="tweet__text-body">Body of tweet goes here!</p>
+              </section>
+              <footer>
+                <p class="tweet__date">5 mins ago</p>
+              </footer>
+            </article>
+          </li>
+        </ul>
+      </div>
     </main>
 
   </body>

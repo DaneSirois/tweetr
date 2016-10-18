@@ -1,5 +1,6 @@
 "use strict";
 
+
 const initialTweets = require("./tweets");
 
 const db = { tweets: initialTweets };

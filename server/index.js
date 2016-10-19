@@ -1,12 +1,12 @@
 "use strict";
 
-const PORT        = 8080;
-const express     = require("express");
-const bodyParser  = require("body-parser");
-const app         = express();
+const PORT = 8080;
+const express = require("express");
+const bodyParser = require("body-parser");
+const app = express();
 
-const tweetsApi  = require('./api/tweets');
-const db         = require('./lib/db');
+const tweetsApi = require('./api/tweets');
+const db = require('./lib/db');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));

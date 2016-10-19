@@ -48,6 +48,7 @@ body {
 /* ================== Nav-Bar ================== */
 
 #nav-bar {
+  z-index: 999;
   position: fixed;
     top: 0px;
     right: 0px;
@@ -220,8 +221,22 @@ body {
       clear: both;
     }
 
+.tweet__social-buttons { /* <div> */ 
+  display: none;
+  float: right;
+}
+    .tweet__social-buttons:after { /* <div> */ 
+      clear: both;
+    }
 
+    .tweet__social-buttons i { /* <i> - Font Awesome */ 
+      font-size: 1.1em;
+      margin-left: 5px;
+    }
 
+.show {
+  display: block;
+}
 
 
 

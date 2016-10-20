@@ -24,6 +24,15 @@ li {
   list-style: none;
 }
 
+/* ================== States ================== */
+
+.show {
+  display: block !important;
+}
+
+.selected {
+  background-color: grey;
+}
 
 /* ================== Layout ================== */
 
@@ -75,9 +84,24 @@ body {
       margin-left: 10px;
     }
 
+    #nav-bar .compose__button { /* <button> */
+      cursor: pointer;
+      float: right;
+      height: 100%;
+      padding: 10px;
+
+      font-size: 1.2em;
+      border: 1px solid black;
+    }
+
+    #nav-bar .compose__button:hover { /* <button> */
+      background-color: grey; 
+    }
+
 /* ================== Nav-Bar ================== */
 
 .new-tweet { /* <section> */
+  display: none;
   position: relative;
   background-color: grey;
 
@@ -234,10 +258,9 @@ body {
       margin-left: 5px;
     }
 
-.show {
-  display: block;
+article.tweet:hover .tweet__social-buttons {
+  display: block !important;
 }
-
 
 
 

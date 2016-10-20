@@ -1,7 +1,7 @@
 const tweetsViewFactory = function (htmlSelector) {
   const $selector = htmlSelector;
 
-  const _buildTweetElement = function (tweetData) {
+  const __buildTweetElement = function (tweetData) {
     const data = tweetData;
     const $tweet = $('<article>').addClass('tweet');
 
@@ -38,8 +38,7 @@ const tweetsViewFactory = function (htmlSelector) {
   return {
     render: function(tweetsArr) {
       tweetsArr.forEach((tweet) => {
-        const builtTweet = _buildTweetElement(tweet);
-        $($selector).append(builtTweet);
+        $($selector).prepend(__buildTweetElement(tweet));
       });
     }
   };

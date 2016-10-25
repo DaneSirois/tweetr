@@ -1,0 +1,45 @@
+/* ===== Nav-Bar ===== */
+
+#nav-bar {
+  z-index: 999;
+  position: fixed;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+
+  height: 80px;
+
+  background-color: #00a087;
+  color: #e8fdff;
+  padding: 0px 2em;
+
+  border-bottom: 1px solid black;
+}
+
+    #nav-bar .logo { /* <img> */
+      float: left;
+      width: 80px; 
+      height: 80px;
+    }
+
+    #nav-bar .header { /* <span> */
+      float: left;
+      font-size: 2em;
+      line-height: 80px;
+
+      margin-left: 10px;
+    }
+
+    #nav-bar .compose__button { /* <button> */
+      cursor: pointer;
+      float: right;
+      height: 100%;
+      padding: 10px;
+
+      font-size: 1.2em;
+      border: 1px solid black;
+    }
+
+    #nav-bar .compose__button:hover { /* <button> */
+      background-color: grey; 
+    }

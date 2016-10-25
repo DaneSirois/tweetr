@@ -1,0 +1,40 @@
+@import '../normalize-4.1.1';
+@import './_variables';
+@import './_mainPage-layout';
+@import './_navbar';
+@import './_new-tweet';
+@import './_tweet-template';
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  color: #244751;
+  background-color: #eee;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+li {
+  list-style: none;
+}
+
+/* ================== States ================== */
+
+.show {
+  display: block !important;
+}
+
+.selected {
+  background-color: grey;
+}

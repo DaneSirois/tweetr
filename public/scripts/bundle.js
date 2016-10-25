@@ -52,7 +52,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	
-	const countCharacters = __webpack_require__(2);
+	const utilities_module = __webpack_require__(2);
 	const tweets_module = __webpack_require__(3);
 	const tweets_view_factory = __webpack_require__(4);
 
@@ -60,34 +60,39 @@
 
 	  const tweetsList = tweets_view_factory('.tweetList');
 
-	  // UI Handlers:
-	  $('.new-tweet textarea').on('input', countCharacters);  
+	  // UI Events:
+	  $('.new-tweet textarea').on('input', utilities_module.countCharacters);  
 	  $('#nav-bar .compose__button').on('click', () => {
-	     $('.new-tweet').slideToggle();
-	     $('.new-tweet textarea').focus();
+	    $('.new-tweet').slideToggle();
+	    $('.new-tweet textarea').focus();
 	  });
 
-	  // POST requests:
+	  // On New Tweet:
 	  $('.new-tweet form').on('submit', function(event) { 
 	    event.preventDefault(); 
-	    const formText = $(this).find('textarea').val();
-
-	    if (formText != null || "" && formText.length <= 140) {
-	      tweets_module.submitTweet(formText).then(() => {
+	    let inputText = $(this).find('textarea').val();
+	    let inputLength = Number(inputText.length);
+	  
+	    if (inputLength <= 140 && /\S/.test(inputText) && inputText != null || "") {
+	      
+	      tweets_module.submitTweet(inputText).then(() => {
 	        return tweets_module.getTweets();
 	      }).then((tweetsArray) => {
 	        tweetsList.render(tweetsArray);
 	      }).then(() => {
-	        location.reload();
+	        tweets_module.getTweets().then((tweetsArray) => {
+	          tweetsList.render(tweetsArray);
+	        });
 	      }).fail((error) => {
 	        console.error(`Error: ${error}`);
 	      });
+
 	    } else {
 	      alert("Error with input!");
 	    }
 	  });
 
-	  // GET requests:
+	  // On Initial Load:
 	  tweets_module.getTweets().then((tweetsArray) => {
 	    tweetsList.render(tweetsArray);
 	  });
@@ -99,7 +104,9 @@
 /* 2 */
 /***/ function(module, exports) {
 
-	const countCharacters = function (event){
+	let utilities_module = {};
+
+	utilities_module.countCharacters = function (event){
 	  event.stopPropagation();
 	  const maxChars = 140;
 	  const input = $(this).val();
@@ -114,8 +121,7 @@
 	  }
 	}
 
-	module.exports = countCharacters;
-
+	module.exports = utilities_module;
 
 /***/ },
 /* 3 */

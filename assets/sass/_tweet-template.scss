@@ -1,0 +1,97 @@
+/* ===== Tweet-Template ===== */
+
+@import './_variables';
+
+.tweet { /* <article> */ 
+  width: 100%;
+
+  border-radius: 2px;
+  border: 1px solid black;
+}
+
+  .tweet header, .tweet section, .tweet footer { /* <header> */
+    display: block;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+
+    padding: 10px;
+  }
+
+  .tweet header { /* <header> */ 
+    background-color: lightgrey;
+
+    max-height: 72px;
+
+    border-bottom: 1px solid black;
+  }
+
+  .tweet header .tweet__profile-pic { /* <img> */ 
+    float: left;
+    height: 50px;
+    margin-right: 12px;
+  }
+      .tweet header .tweet__profile-pic:after { /* <img> */ 
+        clear: both;
+      }
+
+  .tweet header .tweet__username { /* <p> */ 
+    float: left;
+    margin: 0px;
+
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+      .tweet header .tweet__username:after { /* <img> */ 
+        clear: both;
+      }
+
+  .tweet header .tweet__tweeter-handle { /* <p> */ 
+    float: right;
+    margin: 0px;
+  }
+      .tweet header .tweet__tweeter-handle:after { /* <img> */ 
+        clear: both;
+      }
+
+  .tweet section { /* <section> */ 
+    text-align: left;
+
+    min-height: 100px;
+  }
+
+  .tweet section .tweet__text-body { /* <p> */ 
+    word-wrap: break-word;
+    margin: 0px;
+  }
+
+  .tweet footer { /* <footer> */ 
+    border-top: 1px solid black;
+  }
+
+  .tweet footer .tweet__date { /* <p> */ 
+    float: left;
+
+    margin: 0px;
+  }
+      .tweet footer .tweet__date:after { /* <p> */ 
+        clear: both;
+      }
+
+  .tweet__social-buttons { /* <div> */ 
+    display: none;
+    float: right;
+  }
+      .tweet__social-buttons:after { /* <div> */ 
+        clear: both;
+      }
+
+      .tweet__social-buttons i { /* <i> - Font Awesome */ 
+        font-size: 1.1em;
+        margin-left: 5px;
+      }
+
+
+article.tweet:hover .tweet__social-buttons {
+  display: block !important;
+}

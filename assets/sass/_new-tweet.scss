@@ -1,0 +1,62 @@
+/* ===== New-Tweet ===== */
+
+.new-tweet { /* <section> */
+  display: none;
+  position: relative;
+  background-color: grey;
+
+  padding: 1.5em;
+
+  border: 1px solid black;
+  border-radius: 2px;
+}
+  
+    .new-tweet h2 {
+      float: left;
+      margin: 0px;
+    }
+        .new-tweet h2:after {
+          clear: both;
+        }
+
+    .new-tweet textarea { /* <textarea> */
+      word-wrap: break-word;
+      margin: 0px auto;
+      margin: 10px 0px;
+      padding: 8px;
+
+      max-width: 640px;
+      width: 100%;
+
+      border: 1px solid black;
+    }
+
+    .new-tweet__footer { /* <div> */ 
+      overflow: hidden;
+      width: 100%;
+    }
+    
+        .new-tweet input { /* <input> */ 
+          float: left;
+
+          height: 30px;
+          width: 80px;
+          border: 1px solid black;
+        }
+
+        .new-tweet .counter { /* <span> */
+          float: right;
+          font-size: 1.5em;
+        }
+
+        .new-tweet input:after, .new-tweet .counter:after {
+           content: "."; 
+           visibility: hidden; 
+           display: block; 
+           height: 0; 
+           clear: both;
+        }
+
+        .counter--red {
+          color: red;
+        }

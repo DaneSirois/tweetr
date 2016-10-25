@@ -1,4 +1,6 @@
-const countCharacters = function (event){
+let utilities_module = {};
+
+utilities_module.countCharacters = function (event){
   event.stopPropagation();
   const maxChars = 140;
   const input = $(this).val();
@@ -13,4 +15,4 @@ const countCharacters = function (event){
   }
 }
 
-module.exports = countCharacters;
+module.exports = utilities_module;
